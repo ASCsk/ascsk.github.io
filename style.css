@@ -77,7 +77,7 @@ section h2 {
 /* Make single images larger */
 .card-images img:only-child {
     flex: 2 0 auto;
-    max-height: 300px;
+    max-height: 340px;
 }
 
 .card h3 {
