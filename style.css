@@ -54,11 +54,18 @@ section h2 {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-.card img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
+.card-images {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+.card-images img {
+    height: 150px;
     border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .card h3 {
@@ -111,5 +118,9 @@ footer {
 
     section {
         padding: 30px 15px;
+    }
+
+    .card-images img {
+        height: 120px;
     }
 }
