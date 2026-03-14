@@ -24,7 +24,7 @@ header p {
 
 section {
     max-width: 900px;
-    margin: auto;
+    margin: 80px auto;
     padding: 40px 20px;
     background: #5C5C5C;
     border-radius: 8px;
@@ -42,7 +42,7 @@ section h2 {
 .projects {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
 }
 
 .card {
@@ -64,11 +64,10 @@ section h2 {
     flex-wrap: wrap;
 }
 
-/* Asymmetrical sizes based on number of images */
 .card-images img {
-    flex: 1 1 250px;
-    max-width: 100%;
     height: auto;
+    width: auto;
+    max-width: 100%;
     border-radius: 6px;
 }
 
