@@ -58,23 +58,34 @@ section h2 {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+/* Grid for images */
 .card-images {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    flex-wrap: wrap;
+    align-items: start;
 }
 
+/* All images by default */
 .card-images img {
+    width: 100%;
     height: auto;
-    width: auto;
-    max-width: 100%;
     border-radius: 6px;
 }
 
-/* Make single images larger */
+/* Single image → full width */
 .card-images img:only-child {
-    flex: 2 0 auto;
-    max-height: 340px;
+    grid-column: span 2;
+}
+
+/* First image hero for odd number >1 images (3,5,7…) */
+.card-images img:first-child:nth-last-child(odd):not(:only-child) {
+    grid-column: span 2;
+}
+
+/* All other images → span 1 column */
+.card-images img:not(:first-child) {
+    grid-column: span 1;
 }
 
 .card h3 {
@@ -130,7 +141,14 @@ footer {
         padding: 30px 15px;
     }
 
-    .card-images img {
-        max-height: 200px;
+    .card-images {
+        grid-template-columns: 1fr;
+        /* single column on mobile */
+    }
+
+    .card-images img:only-child,
+    .card-images img:first-child:nth-last-child(odd):not(:only-child),
+    .card-images img:not(:first-child) {
+        grid-column: span 1;
     }
 }
