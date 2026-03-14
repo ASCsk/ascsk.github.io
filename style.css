@@ -74,8 +74,11 @@ section h2 {
 }
 
 /* Single image → full width */
-.card-images img:only-child {
-    grid-column: span 2;
+.card-images img.hero {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
 }
 
 /* First image hero for odd number >1 images (3,5,7…) */
@@ -83,8 +86,26 @@ section h2 {
     grid-column: span 2;
 }
 
+/* Portrait wrapper spans both columns */
+.portrait-wrapper {
+    grid-column: 1 / -1;
+    /* occupy the full row */
+    text-align: center;
+    /* center its contents */
+}
+
+/* Portrait image inside wrapper */
+.portrait-wrapper img.portrait {
+    display: inline-block;
+    /* needed for text-align centering */
+    max-width: 50%;
+    /* adjust width */
+    height: auto;
+    border-radius: 6px;
+}
+
 /* All other images → span 1 column */
-.card-images img:not(:first-child) {
+.card-images img:not(.hero) {
     grid-column: span 1;
 }
 
