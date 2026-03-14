@@ -63,7 +63,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    align-items: start;
+    align-items: center
 }
 
 /* All images by default */
@@ -71,6 +71,19 @@ section h2 {
     width: 100%;
     height: auto;
     border-radius: 6px;
+}
+
+/* Rotated images */
+.card-images img.rotated {
+    transform: rotate(-90deg) scale(0.84);
+    transform-origin: center center;
+    max-width: 90%;
+    height: auto;
+    margin: auto;
+    display: block;
+    border-radius: 6px;
+    justify-self: center;
+    align-self: center;
 }
 
 /* Single image → full width */
@@ -94,6 +107,11 @@ section h2 {
     /* center its contents */
 }
 
+/* All other images → span 1 column */
+.card-images img:not(.hero) {
+    grid-column: span 1;
+}
+
 /* Portrait image inside wrapper */
 .portrait-wrapper img.portrait {
     display: inline-block;
@@ -104,9 +122,17 @@ section h2 {
     border-radius: 6px;
 }
 
-/* All other images → span 1 column */
-.card-images img:not(.hero) {
-    grid-column: span 1;
+.rotate-wrapper {
+    text-align: center;
+}
+
+/* Rotated/scaled images inside wrapper */
+.rotate-wrapper img.rotated {
+    display: inline-block;
+    transform: rotate(-90deg) scale(0.8);
+    max-width: 90%;
+    height: auto;
+    border-radius: 6px;
 }
 
 .card h3 {
@@ -117,8 +143,10 @@ section h2 {
 .card p {
     font-size: 0.95em;
     line-height: 1.4em;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
 }
-
 .card a {
     display: inline-block;
     margin-top: 10px;
@@ -137,12 +165,12 @@ section h2 {
 
 .links a {
     text-decoration: none;
-    color: #0066cc;
+    color: #fd8802;
     margin: 0 10px;
 }
 
 .links a:hover {
-    color: #004999;
+    color: #ff3e04;
 }
 
 footer {
