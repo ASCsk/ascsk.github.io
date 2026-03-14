@@ -65,8 +65,9 @@ section h2 {
 .card-images img {
     flex: 1 0 auto;
     border-radius: 6px;
-    object-fit: cover;
-    max-height: 250px;
+    object-fit: contain;
+    max-height: 300px;
+    width: auto;
 }
 
 /* Make single images larger */
