@@ -61,17 +61,15 @@ section h2 {
 .card-images {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
-    overflow-x: auto;
+    flex-wrap: wrap;
 }
 
 /* Asymmetrical sizes based on number of images */
 .card-images img {
-    flex: 1 0 auto;
+    flex: 1 1 250px;
+    max-width: 100%;
+    height: auto;
     border-radius: 6px;
-    object-fit: contain;
-    max-height: 250px;
-    width: auto;
 }
 
 /* Make single images larger */
